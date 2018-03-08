@@ -5,7 +5,9 @@
 html
 ```
 <div id="app">
-    <input type="text" v-model="someStr">
+    <input type="text" v-model="str">
+    <br/>
+    <div>{{str}}</div>
 </div>    
 
 ```
@@ -15,7 +17,7 @@ js
 var vm = new MVVM({
     el: '#app',
     data: {
-        someStr: 'hello '
+        str: 'hello '
     }
 });
 ```
