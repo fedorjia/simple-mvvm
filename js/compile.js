@@ -122,7 +122,6 @@ var compileUtil = {
 
     bind: function(node, vm, exp, dir) {
         var updaterFn = updater[dir + 'Updater'];
-
         updaterFn && updaterFn(node, this._getVMVal(vm, exp));
 
         new Watcher(vm, exp, function(value, oldValue) {
@@ -142,6 +141,7 @@ var compileUtil = {
 
     _getVMVal: function(vm, exp) {
         var val = vm;
+
         exp = exp.split('.');
         exp.forEach(function(k) {
             val = val[k];
